@@ -18,7 +18,7 @@ const TEAM = [
   {
     name: "Tristan Aitchison",
     role: "Chef de Cuisine",
-    image: "/tristan.png",
+    image: "/Tristan.png",
     objectPosition: "60% 12%",
   },
   {

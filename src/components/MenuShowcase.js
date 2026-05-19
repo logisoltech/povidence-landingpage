@@ -15,19 +15,19 @@ const MENU_BY_TAB = {
   signature: [
     {
       num: "01",
-      title: "Oysters On The Half Shell",
-      description: "Daily selection, tarragon mignonette.",
+      title: "Fat Bastard Oyster",
+      description: "Golden Kaluga caviar, dongchimi, rooftop herbs & edible flowers.",
       image:
-        "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=1200&q=85",
+        "/five.jpg",
       fallback:
         "https://images.unsplash.com/photo-1559847844-53156997659?auto=format&fit=crop&w=1200&q=85",
     },
     {
       num: "02",
-      title: "Santa Barbara Spot Prawns",
-      description: "Rosemary, olive oil, lemon.",
+      title: "Hokkaido Scallop",
+      description: "Scallop-infused XO, scallop broth, chayote greens, oceanic brine sweetness.",
       image:
-        "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=85",
+        "/six.png",
       fallback:
         "https://images.unsplash.com/photo-1519708221-053da5824f44?auto=format&fit=crop&w=1200&q=85",
     },
@@ -337,7 +337,7 @@ export default function MenuShowcase() {
                       <Link href="/menus" className="menu-showcase-card-cta">
                         VIEW DISH
                         <span className="menu-showcase-card-cta-arrow" aria-hidden="true">
-                          â†’
+                          →
                         </span>
                       </Link>
                     </div>
@@ -352,7 +352,7 @@ export default function MenuShowcase() {
           <Link href="/menus" className="menu-showcase-cta">
             EXPLORE THE FULL MENU
             <span className="menu-showcase-cta-arrow" aria-hidden="true">
-              â†’
+              →
             </span>
           </Link>
         </footer>

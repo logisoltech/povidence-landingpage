@@ -1359,13 +1359,17 @@ textarea {
 
   .hero-section .social-icon {
     color: var(--accent);
-    transition: color 0.3s ease;
+    transition:
+      color 0.3s ease,
+      opacity 0.3s ease,
+      transform 0.3s ease;
   }
 
   .hero-section .social-icon:hover,
   .hero-section .social-icon:focus-visible {
     color: #ffffff;
-    transform: none;
+    opacity: 0.92;
+    transform: scale(1.08);
     outline: none;
   }
 
@@ -1538,14 +1542,14 @@ textarea {
 @media (min-width: 768px) {
   .signature-menu-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(1.2rem, 2.8vw, 1.5rem);
+    gap: clamp(1rem, 2.4vw, 1.25rem);
   }
 }
 
 @media (min-width: 1024px) {
   .signature-menu-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(1.1rem, 2vw, 1.45rem);
+    gap: clamp(0.9rem, 1.6vw, 1.15rem);
   }
 }
 

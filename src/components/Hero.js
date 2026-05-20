@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const TASTING_COURSES = [
@@ -308,34 +307,6 @@ export default function Hero() {
                 </li>
               ))}
             </ul>
-
-            <div className="hero-menu-footer">
-              <Link href="/menus" className="hero-menu-footer-link">
-                VIEW FULL MENU
-              </Link>
-              <Link
-                href="/menus"
-                className="hero-menu-footer-icon"
-                aria-label="View full menu"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="14"
-                  height="14"
-                  aria-hidden="true"
-                  className="hero-menu-footer-arrow"
-                >
-                  <path
-                    d="M10 7l5 5-5 5"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.75"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </Link>
-            </div>
           </div>
         </aside>
       </div>
@@ -344,7 +315,7 @@ export default function Hero() {
         <ul className="hero-social-list">
           <li className="hero-social-item">
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/providencela"
               className="hero-social-link social-icon"
               target="_blank"
               rel="noopener noreferrer"
@@ -355,7 +326,7 @@ export default function Hero() {
           </li>
           <li className="hero-social-item">
             <a
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/providencela"
               className="hero-social-link social-icon"
               target="_blank"
               rel="noopener noreferrer"
@@ -366,7 +337,7 @@ export default function Hero() {
           </li>
           <li className="hero-social-item">
             <a
-              href="https://twitter.com/"
+              href="https://x.com/providence_LA"
               className="hero-social-link social-icon"
               target="_blank"
               rel="noopener noreferrer"

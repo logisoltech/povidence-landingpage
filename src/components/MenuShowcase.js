@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const TABS = [
   { id: "signature", label: "SIGNATURE MENU", Icon: IconUtensils },
@@ -14,6 +14,7 @@ const TABS = [
 const MENU_BY_TAB = {
   signature: [
     {
+      id: "signature-01",
       num: "01",
       title: "Fat Bastard Oyster",
       description: "Golden Kaluga caviar, dongchimi, rooftop herbs & edible flowers.",
@@ -23,6 +24,7 @@ const MENU_BY_TAB = {
         "https://images.unsplash.com/photo-1559847844-53156997659?auto=format&fit=crop&w=1200&q=85",
     },
     {
+      id: "signature-02",
       num: "02",
       title: "Hokkaido Scallop",
       description: "Scallop-infused XO, scallop broth, chayote greens, oceanic brine sweetness.",
@@ -30,6 +32,7 @@ const MENU_BY_TAB = {
         "/six.jpg",
     },
     {
+      id: "signature-03",
       num: "03",
       title: "House Smoked Wild Alaskan King Salmon",
       description: "Horseradish, ikura, rooftop dill, delicately dry-aged preparation.",
@@ -37,6 +40,7 @@ const MENU_BY_TAB = {
         "/salmon.jpg",
     },
     {
+      id: "signature-04",
       num: "04",
       title: "The Uni Egg",
       description: "Sea urchin, Golden Kaluga caviar, Champagne beurre blanc, brioche croutons.",
@@ -46,6 +50,7 @@ const MENU_BY_TAB = {
   ],
   dinner: [
     {
+      id: "dinner-01",
       num: "01",
       title: "Matsutake Sashimi",
       description: "Late autumn sashimi, matsutake mushroom, yuzu, delicate floral garnish.",
@@ -53,6 +58,7 @@ const MENU_BY_TAB = {
         "9.jpg",
     },
     {
+      id: "dinner-02",
       num: "02",
       title: "Wild Japanese Tai Sashimi",
       description: "Celtuce, passion fruit, citrus broth, delicate floral garnish.",
@@ -60,6 +66,7 @@ const MENU_BY_TAB = {
         "/10.jpg",
     },
     {
+      id: "dinner-03",
       num: "03",
       title: "California Box Crab",
       description: "Prawn, summer squash blossom, tomato broth, delicate seasonal seafood composition.",
@@ -67,6 +74,7 @@ const MENU_BY_TAB = {
         "/11.jpg",
     },
     {
+      id: "dinner-04",
       num: "04",
       title: "Smoked Swordfish Belly",
       description: "Gloucester swordfish, flambo shelling beans, preserved black truffle, rich winter broth.",
@@ -76,6 +84,7 @@ const MENU_BY_TAB = {
   ],
   lunch: [
     {
+      id: "lunch-01",
       num: "01",
       title: "Kombu Jime Wild Japanese Tai Sashimi",
       description: "Celtuce, jicama, passion fruit, pickled ginger, rooftop herbs.",
@@ -83,6 +92,7 @@ const MENU_BY_TAB = {
         "/13.jpg",
     },
     {
+      id: "lunch-02",
       num: "02",
       title: "Salt Spring Island Mussel",
       description: "Savory mussel broth, gratiné finish, delicate chawanmushi custard.",
@@ -90,22 +100,25 @@ const MENU_BY_TAB = {
         "/14.jpg",
     },
     {
-      num: "02",
+      id: "lunch-03",
+      num: "03",
       title: "Red Abalone with Winter Squash",
       description: "Red Abalone, Egg Sabayon & Abalone Dashi.",
       image:
         "/two.jpg",
     },
     {
+      id: "lunch-04",
       num: "04",
       title: "King Salmon",
       description: "Chanterelles, pickled grapes, and rooftop herbs.",
       image:
-        "four.jpg",
+        "/four.jpg",
     },
   ],
   dessert: [
     {
+      id: "dessert-01",
       num: "01",
       title: "Valrhona SoufflÃ©",
       description: "Dark chocolate, crÃ¨me anglaise, raspberry.",
@@ -115,6 +128,7 @@ const MENU_BY_TAB = {
         "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1200&q=85",
     },
     {
+      id: "dessert-02",
       num: "02",
       title: "Lemon Tart",
       description: "Meyer lemon curd, Italian meringue, candied zest.",
@@ -124,6 +138,7 @@ const MENU_BY_TAB = {
         "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=1200&q=85",
     },
     {
+      id: "dessert-03",
       num: "03",
       title: "Seasonal Sorbet",
       description: "Rotating fruit selection, mint, prosecco granita.",
@@ -133,6 +148,7 @@ const MENU_BY_TAB = {
         "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1200&q=85",
     },
     {
+      id: "dessert-04",
       num: "04",
       title: "CrÃ¨me BrÃ»lÃ©e",
       description: "Madagascar vanilla, caramelized sugar, berry compote.",
@@ -144,6 +160,7 @@ const MENU_BY_TAB = {
   ],
   wine: [
     {
+      id: "wine-01",
       num: "01",
       title: "Dom PÃ©rignon",
       description: "Champagne, France â€” citrus, brioche, fine mousse.",
@@ -153,6 +170,7 @@ const MENU_BY_TAB = {
         "https://images.unsplash.com/photo-1553361373-0896056f270a?auto=format&fit=crop&w=1200&q=85",
     },
     {
+      id: "wine-02",
       num: "02",
       title: "Burgundy Pinot Noir",
       description: "CÃ´te de Nuits â€” red cherry, earth, silky tannins.",
@@ -162,6 +180,7 @@ const MENU_BY_TAB = {
         "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=85",
     },
     {
+      id: "wine-03",
       num: "03",
       title: "Napa Cabernet",
       description: "Oakville â€” cassis, cedar, structured finish.",
@@ -171,6 +190,7 @@ const MENU_BY_TAB = {
         "https://images.unsplash.com/photo-1553361373-0896056f270a?auto=format&fit=crop&w=1200&q=85",
     },
     {
+      id: "wine-04",
       num: "04",
       title: "Sancerre Blanc",
       description: "Loire Valley â€” gooseberry, mineral, crisp acidity.",
@@ -230,6 +250,11 @@ function DishImage({ src, fallback, alt }) {
   const [currentSrc, setCurrentSrc] = useState(src);
   const [failed, setFailed] = useState(false);
 
+  useEffect(() => {
+    setCurrentSrc(src);
+    setFailed(false);
+  }, [src, fallback]);
+
   if (failed) {
     return <div className="menu-showcase-card-media-fallback" aria-hidden="true" />;
   }
@@ -249,9 +274,15 @@ function DishImage({ src, fallback, alt }) {
   );
 }
 
+function getDishesForTab(tabId) {
+  const items = MENU_BY_TAB[tabId];
+  if (!Array.isArray(items)) return MENU_BY_TAB.signature;
+  return items.slice(0, 4);
+}
+
 export default function MenuShowcase() {
   const [activeTab, setActiveTab] = useState("signature");
-  const dishes = MENU_BY_TAB[activeTab] ?? MENU_BY_TAB.signature;
+  const dishes = getDishesForTab(activeTab);
 
   return (
     <section className="menu-showcase" aria-labelledby="menu-showcase-heading">
@@ -295,6 +326,7 @@ export default function MenuShowcase() {
         </div>
 
         <div
+          key={activeTab}
           id="menu-showcase-panel"
           role="tabpanel"
           aria-labelledby={`menu-tab-${activeTab}`}
@@ -302,10 +334,15 @@ export default function MenuShowcase() {
         >
           <ul className="menu-showcase-grid">
             {dishes.map((dish) => (
-              <li key={`${activeTab}-${dish.num}`} className="menu-showcase-card-wrap">
+              <li key={`${activeTab}-${dish.id}`} className="menu-showcase-card-wrap">
                 <article className="menu-showcase-card">
                   <div className="menu-showcase-card-media">
-                    <DishImage src={dish.image} fallback={dish.fallback} alt="" />
+                    <DishImage
+                      key={`${activeTab}-${dish.id}`}
+                      src={dish.image}
+                      fallback={dish.fallback}
+                      alt=""
+                    />
                     <span className="menu-showcase-card-badge">{dish.num}</span>
                   </div>
                   <div className="menu-showcase-card-body">
@@ -328,10 +365,10 @@ export default function MenuShowcase() {
 
         <footer className="menu-showcase-footer">
           <Link href="/menus" className="menu-showcase-cta">
-            EXPLORE THE FULL MENU
-            <span className="menu-showcase-cta-arrow" aria-hidden="true">
-              →
+            <span className="menu-showcase-cta-icon" aria-hidden="true">
+              <span className="menu-showcase-cta-plus">+</span>
             </span>
+            <span className="menu-showcase-cta-label">EXPLORE THE FULL MENU</span>
           </Link>
         </footer>
       </div>

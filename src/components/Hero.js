@@ -32,7 +32,7 @@ const HERO_SLIDE_2_SRC =
 
 /** Slide 3: remote — fine-dining kitchen / chef prep (Mixkit CDN). */
 const HERO_SLIDE_3_VIDEO_SRC =
-  "https://assets.mixkit.co/videos/13262/13262-720.mp4";
+  "/banner16.mp4";
 
 const HOLD_MS = [2000, 2000, 5000];
 const FADE_MS = 900;
